@@ -70,9 +70,9 @@ class NewB extends NewA {
     this.age = age;
   }
 
-  //getName(text) {
+  // getName(text) {
   //  return `${this.name}  ${text}`;
-  //}
+  // }
 
   getName(text) {
     return `${super.getName()} ${text}`;
@@ -91,9 +91,8 @@ class NewB extends NewA {
   }
 
   static defaultUser() {
-    return new NewB('test', 0)
+    return new NewB('test', 0);
   }
-  
 }
 
 function task10New() {
@@ -106,4 +105,4 @@ function task10New() {
   return b;
 }
 
-console.log(task10New())
+console.log(task10New());
