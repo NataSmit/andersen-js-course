@@ -28,4 +28,57 @@ export function task8Old() {
 // Напишите реализацию функции task8Old на ES6+ ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task8New() {}
+export function task8New() {
+  this.nums = [0, 2, 5, 10, 15];
+  this.fives = [];
+  this.calculateNumsFive = () => {
+    this.nums.forEach(v => {
+      if (v % 5 === 0) {
+        this.fives.push(v);
+      }
+    });
+    return this.fives;
+  };
+
+  return this.calculateNumsFive();
+}
+
+const test = new task8New();
+console.log(test);
+
+
+
+function task8New2() {
+  const obj = {
+    nums: [0, 2, 5, 10, 15],
+    fives: [],
+    calculateNumsFive() {
+      this.nums.forEach(v => {
+        if (v % 5 === 0) {
+          this.fives.push(v);
+        }
+      });
+
+      return this.fives;
+    },
+  };
+
+  return obj.calculateNumsFive();
+}
+
+console.log(task8New2())
+
+//gh
+//export const task8New = () => {
+//  const obj = {
+//    nums: [0, 2, 5, 10, 15],
+//    fives: [],
+//    calculateNumsFive() {
+//      this.fives = this.nums.filter(v => v % 5 === 0);
+//
+//      return this.fives;
+//    },
+//  };
+//
+//  return obj.calculateNumsFive();
+//};

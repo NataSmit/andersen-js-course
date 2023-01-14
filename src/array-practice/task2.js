@@ -15,3 +15,20 @@
  * console.log(arrayDiff([1, 2, 3], [1, 2, 4])); -> [3, 4]
  * console.log(arrayDiff([1, 3, 3, 4], [1, 3, '4'])); -> [4, '4']
  */
+
+function arrayDiff(arr1, arr2) {
+  const result = [];
+  const newArr = [...arr1, ...arr2];
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr.indexOf(newArr[i]) === newArr.lastIndexOf(newArr[i])) {
+      result.push(newArr[i]);
+    }
+  }
+
+  return result;
+}
+
+console.log(arrayDiff([1, 2, 3], [1, 2, 4]));
+
+// export const arrayDiff = (arr, arrTwo) =>
+//   [...arr, ...arrTwo].filter(value => !arrTwo.includes(value) || !arr.includes(value));

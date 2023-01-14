@@ -11,3 +11,18 @@
  * console.log(without([2, 1, 2, 3], 1, 2)) -> [3]
  * console.log(without([2, 1, 10, 20], 1, 2)) -> [10, 20]
  */
+
+
+function without(arr, ...rest) {
+  const newArr = [...arr, ...rest];
+  const result = [];
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr.indexOf(newArr[i]) === newArr.lastIndexOf(newArr[i])) {
+      result.push(newArr[i]);
+    }
+  }
+  return result
+}
+
+// надо так
+// export const without = (arr, ...args) => arr.filter(v => !args.includes(v));

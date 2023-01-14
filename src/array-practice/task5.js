@@ -15,3 +15,18 @@
  * generator.next(); -> 'Complete!'
  * generator.next(); -> 'Complete!'
  */
+
+
+//function createGenerator(arr) {
+//  
+//  return arr[Symbol.iterator]()
+//}
+
+const createGenerator = array => {
+  const copyArray = array.slice();
+  return {
+    next() {
+      return copyArray.length === 0 ? 'Complete!' : copyArray.shift();
+    },
+  };
+};

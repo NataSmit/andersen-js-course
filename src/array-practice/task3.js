@@ -11,3 +11,7 @@
  *
  * forEachRight([1, 2, 3, 4], val => console.log(val)); -> в консоль 4 3 2 1
  */
+
+function forEachRight(arr, fn) {
+  arr.reverse().forEach(fn)           //  надо сделать копию!!
+}

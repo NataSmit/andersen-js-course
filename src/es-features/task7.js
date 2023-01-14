@@ -7,7 +7,7 @@
  * console.log(task7Old()); -> {test: 0, foo: 1, bar: 2}
  */
 
-export function task7Old() {
+function task7Old() {
   var obj = { test: 0 };
   var obj2 = { foo: 1, bar: 2 };
 
@@ -21,4 +21,11 @@ export function task7Old() {
 // Напишите реализацию функции task7Old на ES6+ ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task7New() {}
+function task7New() {
+  const obj = { test: 0 };
+  const obj2 = { foo: 1, bar: 2 };
+
+  return Object.assign({}, obj, obj2)
+}
+
+console.log(task7New())
